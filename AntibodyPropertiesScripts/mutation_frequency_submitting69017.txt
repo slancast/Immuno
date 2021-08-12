@@ -1,0 +1,7 @@
+#slancast@scg4.stanford.edu:/srv/gsfs0/projects/snyder/slancast/69-017/mutation_freq
+#This must be copied and pasted into the command line
+
+for n in ../*germ-pass.tab
+do
+qsub -cwd -l h_vmem=2g -pe shm 5  -v var=$n -l h_rt=168:00:00 -l s_rt=168:00:00 mutation_frequency69017.sh
+done

@@ -1,0 +1,7 @@
+#slancast@scg4.stanford.edu:/srv/gsfs0/projects/snyder/slancast/IMGT_analyses/IMGTIgE/analyses/diversity_abundance
+#This must be copied and pasted into the command line
+
+for n in $(seq 1 18)
+do
+qsub -cwd -l h_vmem=10g -v var=$n diversity_abundanceIgE.r.sh
+done

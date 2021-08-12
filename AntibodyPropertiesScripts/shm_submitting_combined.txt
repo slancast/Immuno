@@ -1,0 +1,7 @@
+#slancast@scg4.stanford.edu:/srv/gsfs0/projects/snyder/slancast/IMGT_analyses/IMGTcombined/shm_models
+#This must be copied and pasted into the command line
+
+for n in ../*germ-pass.tab
+do
+qsub -cwd -l h_vmem=5g -pe shm 5 -l h_rt=168:00:00 -l s_rt=168:00:00 -v var=$n shm_models_combined.r.sh
+done

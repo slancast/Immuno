@@ -1,0 +1,7 @@
+#slancast@scg4.stanford.edu:/srv/gsfs0/projects/snyder/slancast/IMGT_analyses/IMGTIgD/analyses/mutation_frequency
+#This must be copied and pasted into the command line
+
+for n in $(seq 1 18)
+do
+qsub -cwd -l h_vmem=2g -pe shm 5  -v var=$n -l h_rt=168:00:00 -l s_rt=168:00:00 shazam_mutation_frequencyIgD.r.sh
+done

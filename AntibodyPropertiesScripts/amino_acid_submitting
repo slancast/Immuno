@@ -1,0 +1,7 @@
+#slancast@scg4.stanford.edu:/srv/gsfs0/projects/snyder/slancast/IMGT_analyses/IMGTIgE/analyses/aa_properties
+#This must be copied and pasted into the command line
+
+for n in $(seq 2 24)
+do
+qsub -cwd -l h_vmem=10g -v var=$n amino_acid_propertiesIgE.r.sh
+done
