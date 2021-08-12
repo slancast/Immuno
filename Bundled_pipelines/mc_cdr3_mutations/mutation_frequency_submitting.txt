@@ -1,0 +1,9 @@
+#slancast@scg4.stanford.edu:/srv/gsfs0/projects/snyder/slancast/IMGT_analyses/IMGTcombined/analyses/mutation_freq
+#This must be copied and pasted into the command line
+
+for n in $(seq 1 18)
+do
+qsub -cwd -l h_vmem=20g -v var=2 -l h_rt=168:00:00 -l s_rt=168:00:00 mutation_frequency.sh
+done
+
+#var should be $n, but I just want to test it with 1 for now
